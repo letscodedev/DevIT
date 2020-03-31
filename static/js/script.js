@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     const appConfig = new blockstack.AppConfig(['store_write', 'publish_data'])
@@ -7,10 +6,10 @@ $(document).ready(function () {
     if ($(window).width() <= 1199) {
         console.log("Mobile View");
         $('.show').on('click', function () {
-            $('#left-icons').animate({
+            $('#content').animate({
                 left: 1000
             }, 'slow');
-            $('#left-icons').fadeOut('slow');
+            $('#content').fadeOut('slow');
             // $("#image").css('margin-top', '30px');
             // $("#image").css('width', '75%');
             $("#image").animate({
@@ -29,10 +28,10 @@ $(document).ready(function () {
         });
     } else {
         $('.show').on('click', function () {
-            $('#left-icons').animate({
+            $('#content').animate({
                 left: 1000
             }, 'slow');
-            $('#left-icons').fadeOut('fast');
+            $('#content').fadeOut('fast');
 
             $("#image").animate({
                 'margin-left': '530'
@@ -53,9 +52,6 @@ $(document).ready(function () {
                     count++;
                 } while (count < 15);
             }, 2000);
-
         });
     }
-
-
 })

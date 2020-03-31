@@ -9,3 +9,22 @@ body {
 	height: 100%;
 }
 
+
+
+@media (min-width:320px) { 
+	/* Phone */
+
+}
+
+@media (min-width:961px) {
+	/* Desktop */
+	.row {
+		height: 90vh;
+		display: flex;
+	  	justify-content: center;
+	  	align-items: center;
+	}
+	#image-blockchain {
+		padding: 5rem;
+	}
+}
