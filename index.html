@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="static/css/style.css">
 
     <!-- JS -->
-
+    <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js"
+        integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <script src="static/js/script.js"></script>
 </head>
 
@@ -33,9 +36,13 @@
             </div>
             <div id="left-icons" class="col-md-5 col-sm-12">
                 <h1>Hack-Quarantine</h1>
-                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </h4>
-                <button class="btn btn-success show">Login</button>
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                    est laborum. </h4>
+                <button class="btn btn-success show" id="login">Login</button>
             </div>
         </div>
     </div>
@@ -43,56 +50,5 @@
 
     <!-- JS -->
 </body>
-<script>
-    if($(window).width()<=1199){
-        console.log("Mobile View");
-        $('.show').on('click', function() {
-            $('#left-icons').animate({
-                left: 1000
-            }, 'slow');
-            $('#left-icons').fadeOut('slow');
-            // $("#image").css('margin-top', '30px');
-            // $("#image").css('width', '75%');
-            $("#image").animate({
-                'margin': '10%',
-                'margin-top': '50%'
-            }, 'slow');
-            
-            setTimeout(function() {
-                $("#testing").fadeIn();            
-                var count = 0;
-                do {
-                    $('#testing').fadeOut(1000).fadeIn(1000);
-                    count++;
-                }while(count < 15);
-            }, 2000);
-        });
-    } else {
-        $('.show').on('click', function() {
-            $('#left-icons').animate({
-                left: 1000
-            }, 'slow');
-            $('#left-icons').fadeOut('fast');
-
-            $("#image").animate({
-                'margin-left': '530'
-            }, 'slow');
-            $("#image").css('margin-top', '30px');
-            $("#image").animate({
-                'width': '50%'
-            }, 'slow');
-
-            setTimeout(function() {
-                $("#testing").fadeIn();            
-                var count = 0;
-                do {
-                    $('#testing').fadeOut(1000).fadeIn(1000);
-                    count++;
-                }while(count < 15);
-            }, 2000);
-
-        });        
-    }
-</script>
 
 </html>

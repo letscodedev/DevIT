@@ -1,0 +1,11 @@
+{
+    "name": "HackQurantine",
+    "start_url": "localhost:8080",
+    "description": "A simple demo of Blockstack Auth",
+    "icons": [
+        {
+            "src": "https://workfromhome-a27de.firebaseapp.com/icon/icon.png",
+            "type": "image/png"
+        }
+    ]
+}
