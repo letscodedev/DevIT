@@ -48,7 +48,7 @@
         $('#left-icons').animate({
             left: 1000
         }, 'slow');
-        $('#left-icons').hide('fast');
+        $('#left-icons').fadeOut('fast');
 
         $("#image").animate({
             'margin-left': '530'
@@ -59,7 +59,7 @@
         }, 'slow');
 
         setTimeout(function() {
-            $("#testing").show();
+            $("#testing").fadeIn();
         }, 2000);
 
     });
