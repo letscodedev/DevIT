@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    const appConfig = new blockstack.AppConfig(['store_write', 'publish_data'], "http://localhost:8080", "http://localhost:8080/dashboard.html")
+    const appConfig = new blockstack.AppConfig(['store_write', 'publish_data'])
     var userSession = new blockstack.UserSession({ appConfig })
 
     if ($(window).width() <= 1199) {
