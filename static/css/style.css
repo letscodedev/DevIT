@@ -9,6 +9,49 @@ body {
 	height: 100%;
 }
 
+.nav {
+	padding: 1rem;
+	font-size: 2.5rem;
+	height: 10vh;
+}
+
+.recents {
+	margin-top: 1rem;
+	height: 80vh;
+	border-radius: 10px;
+	border: 1px solid white;
+	padding-top: 1rem;
+}
+
+.dashboard {
+	padding-left: 5rem;
+}
+
+.left-float {
+	float: left;
+}
+
+.left-float h4 {
+	display: inline-block;
+	margin-right: 2rem;
+}
+
+.right-float {
+	float: right;
+}
+
+.add-project {
+	border-radius: 50%;
+	margin-right: 10rem;
+	font-size: 2rem;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	padding: 1rem;
+}
+
 
 @media (min-width:320px) { 
 	/* Phone */

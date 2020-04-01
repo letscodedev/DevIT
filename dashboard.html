@@ -17,115 +17,59 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="static/js/script.js"></script>
-
-    <style>
-        body {
-            background-color: white; color: black;
-        }
-        .m {
-            margin:10px;
-        }
-        .line {
-            display: inline-block;
-        }
-        .right {
-            float: right;
-        }
-        .box {
-            margin-right:10px;border: orange 1px solid; border-radius: 10px; min-height: 230px; min-width: 250px; 
-        }
-        .box1 {
-           border: orange 1px solid; border-radius: 10px; min-height: 50px; min-width: 60px; margin: 5px;
-        }
-        @media (min-width:320px) { 
-	/* Phone */
-            .dash {
-                margin-top: 100px;
-            }
-        }   
-    </style>
 </head>
-<body >
-    <div class="container-fluid" style="min-height: 500px;">
-        <div class="row">
-            <div class="col-sm-6 col-md-2">
-                <div class="m-2"  style="min-height: 400px; border: orange 1px solid; border-radius: 10px;">
-
-                </div>
+<body>
+    <div class="nav">
+        Hack-Quarantine
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-3 col-sm-12">
+            <div class="recents">
+                <ul>
+                    <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 1</li>
+                    <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 2</li>
+                    <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 3</li>
+                    <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 4</li>    
+                </ul>            
             </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="" style="margin-top: -80px;">
-                    <div class="m">
-                        <h1 class="dash">DashBoard</h1>
-                    </div>
-                    
-                    <div style="margin-top: -20px;">
-                        <div class="col m line">
-                            <a href=""><h3>Active Projects</h3>
-                            </a>
-                        </div>
-                        <div class="col m line">
-                            <a href="">
-                                <h3>Past Projects</h3>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 ">
-                        <div class="line box m" >
-                            <div class="m">
-                                <p class="line">Project #1</p>
-                                <p class="line right" >Date</p>
-                            </div>
-                            <div class="col">
-                                <h2 class="m">Web Design</h2>
-                            </div>
-                            <div class="col-12 m">
-                                <button type="button" class="btn btn-danger">Primary</button>
-                                <button type="button" class="btn btn-danger">Primary</button>
-                                <button type="button" class="btn btn-danger">Primary</button>
-                            </div>
-                            <div class="col-12 m">
-                                <div class="line box1">
-                                </div>
-                                <div class="line box1">
-                                </div>
-                                <div class="line box1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="line box m">
-                            <div class="m">
-                                <p class="line">Project #1 </p>
-                                <p class="line right" >Date</p>
-                            </div>
-                            <div>
-                                <h2 class="m">Android</h2>
-                            </div>
-                            <div class="col-12 m">
-                                <button type="button" class="btn btn-danger">Primary</button>
-                                <button type="button" class="btn btn-danger">Primary</button>
-                                <button type="button" class="btn btn-danger">Primary</button>
-                            </div>
-                            <div class="col-12 m">
-                                <div class="line box1">
-                                </div>
-                                <div class="line box1">
-                                </div>
-                                <div class="line box1">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+        <div class="col-md-9 col-sm-12 dashboard">
+            <h1> Dashboard </h1>
+            <div class="project">
+                <div class="left-float">
+                    <a onclick="activeProject()"><h4> Active Projects </h4></a>
+                    <a onclick="pastProject()"><h4> Past Projects </h4></a>
                 </div>
+                <div class="right-float">
+                    <button class="btn btn-warning add-project">+</button>
+                </div>
+                <div style="clear: both"></div>
             </div>
-            <div class=" col-md-2 col-sm-12"  >
-                <div class="m-2" >
-                    Hello
+            <div class="content">
+                <div id="data">
                 </div>
             </div>
         </div>
     </div>
+    <div class="footer">
+        Hack-Quarantine
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            activeProject();
+        });
+        function activeProject() {
+            $("#data").empty();
+            console.log("Active Project");
+            $("#data").append("active");
+        }
+
+        function pastProject() {
+            $("#data").empty();
+            console.log("Past Project");
+            $("#data").append("past");
+        }
+    </script>
 </body>
 </html>
