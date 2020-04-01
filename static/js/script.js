@@ -9,13 +9,13 @@ $(document).ready(function() {
         $('.show').on('click', function() {
             $('#content').animate({
                     left: 400
-                }, 'slow')
-                //$('#content').fadeOut('slow');
+            }, 'slow')
+            $('#content').fadeOut('slow');
 
             //$("#image-blockchain").css('width', '75%');
-            $("#image-blockchain").animate({
-                'width': '75%',
-                'margin': '12%',
+            $("#image").animate({
+                'margin': '10%',
+                'margin-top': '50%'
             }, 'slow');
 
             setTimeout(function() {
