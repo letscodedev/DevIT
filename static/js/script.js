@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     const appConfig = new blockstack.AppConfig(['store_write', 'publish_data'])
     var userSession = new blockstack.UserSession({ appConfig })
@@ -6,18 +6,19 @@ $(document).ready(function () {
 
     if ($(window).width() <= 1199) {
         console.log("Mobile View");
-        $('.show').on('click', function () {
+        $('.show').on('click', function() {
             $('#content').animate({
-                left: 400
-            }, 'slow');
-            $('#content').fadeOut('slow');
+                    left: 400
+                }, 'slow')
+                //$('#content').fadeOut('slow');
 
-            $("#image").css('width', '75%');
-            $("#image").animate({
-                'margin': '10%',
+            //$("#image-blockchain").css('width', '75%');
+            $("#image-blockchain").animate({
+                'width': '75%',
+                'margin': '12%',
             }, 'slow');
 
-            setTimeout(function () {
+            setTimeout(function() {
                 $("#testing").fadeIn();
                 var count = 0;
                 do {
@@ -27,21 +28,34 @@ $(document).ready(function () {
             }, 2000);
         });
     } else {
-        $('.show').on('click', function () {
+        $('.show').on('click', function() {
             $('#content').animate({
-                left:1000
+                left: 800
+            }, 'slow')
+            $('#image-blockchain').animate({
+                'margin-left': '34%',
+                'width': '40%'
             }, 'slow');
-            $('#content').fadeOut('slow');
+            //$('#content').fadeOut('slow');
+            // $("#image").animate({
+            //     'width': '50%',
+            //     'margin-left': '28%'
+            // }, 'slow');
 
-            $("#image").animate({
-                'width': '50%',
-                
-            }, 'slow');
-            $("#image").animate({
-                'margin-left': '20%'
-            }, 'slow');
-            
-            setTimeout(function () {
+            // $('#content').animate({
+            //     left: 1000
+            // }, 'fast').fadeOut('slow');
+
+
+
+
+
+
+            // $("#image").animate({
+
+            // }, 'slow');
+
+            setTimeout(function() {
                 if (!userSession.isUserSignedIn() || !userSession.isSignInPending()) {
                     userSession.redirectToSignIn()
                 }
