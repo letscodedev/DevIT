@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!--- CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <!-- JS -->
+    <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js"
+        integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="static/js/script.js"></script>
+
+    <style>
+        body {
+            background-color: white; color: black;
+        }
+        .m {
+            margin:10px;
+        }
+        .line {
+            display: inline-block;
+        }
+        .right {
+            float: right;
+        }
+        .box {
+            margin-right:10px;border: orange 1px solid; border-radius: 10px; min-height: 230px; min-width: 250px; 
+        }
+        .box1 {
+           border: orange 1px solid; border-radius: 10px; min-height: 50px; min-width: 60px; margin: 5px;
+        }
+        @media (min-width:320px) { 
+	/* Phone */
+            .dash {
+                margin-top: 100px;
+            }
+        }   
+    </style>
+</head>
+<body >
+    <div class="container-fluid" style="min-height: 500px;">
+        <div class="row">
+            <div class="col-sm-6 col-md-2">
+                <div class="m-2"  style="min-height: 400px; border: orange 1px solid; border-radius: 10px;">
+
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="" style="margin-top: -80px;">
+                    <div class="m">
+                        <h1 class="dash">DashBoard</h1>
+                    </div>
+                    
+                    <div style="margin-top: -20px;">
+                        <div class="col m line">
+                            <a href=""><h3>Active Projects</h3>
+                            </a>
+                        </div>
+                        <div class="col m line">
+                            <a href="">
+                                <h3>Past Projects</h3>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 ">
+                        <div class="line box m" >
+                            <div class="m">
+                                <p class="line">Project #1</p>
+                                <p class="line right" >Date</p>
+                            </div>
+                            <div class="col">
+                                <h2 class="m">Web Design</h2>
+                            </div>
+                            <div class="col-12 m">
+                                <button type="button" class="btn btn-danger">Primary</button>
+                                <button type="button" class="btn btn-danger">Primary</button>
+                                <button type="button" class="btn btn-danger">Primary</button>
+                            </div>
+                            <div class="col-12 m">
+                                <div class="line box1">
+                                </div>
+                                <div class="line box1">
+                                </div>
+                                <div class="line box1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line box m">
+                            <div class="m">
+                                <p class="line">Project #1 </p>
+                                <p class="line right" >Date</p>
+                            </div>
+                            <div>
+                                <h2 class="m">Android</h2>
+                            </div>
+                            <div class="col-12 m">
+                                <button type="button" class="btn btn-danger">Primary</button>
+                                <button type="button" class="btn btn-danger">Primary</button>
+                                <button type="button" class="btn btn-danger">Primary</button>
+                            </div>
+                            <div class="col-12 m">
+                                <div class="line box1">
+                                </div>
+                                <div class="line box1">
+                                </div>
+                                <div class="line box1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-md-2 col-sm-12"  >
+                <div class="m-2" >
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
