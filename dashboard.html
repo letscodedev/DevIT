@@ -10,6 +10,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/style.css">
     
+
+    <style type="text/css">
+        .project-box{
+            width: 35%;
+            /*margin:5px;*/
+            border:1px solid white;
+            border-radius:5px;
+            min-width: 239px;
+        }
+        .project-box h1{
+            margin: 1rem;
+        }
+        .project-box-header {
+            margin: 2rem    1rem;
+        }
+        .project-box-buttons{
+            margin: 1rem;
+        }
+        .project-box-buttons button{
+            margin:0.5rem;
+            width: 100%
+        }
+        .project-box-display{
+            margin:1rem;
+        }
+        .project-box-display div{
+            width: 33%;
+            padding:1rem;
+            margin:0.5rem;
+            text-align: center;
+            border:1px solid white;
+            border-radius: 5px;
+        }
+    </style>
     <!-- JS -->
     <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js"
         integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX"
@@ -46,8 +80,31 @@
                 <div style="clear: both"></div>
             </div>
             <div class="content">
-                <div id="data">
+                <!-- MY CONTENT -->
+
+                <div style="display:flex; margin:2rem;">    
+                    <div class="project-box">   
+                        <div class="project-box-header" style="display:flex; justify-content: space-between;">
+                            <span>project#1</span>
+                            <span >date</span>
+                        </div>
+                        <h1>Web design</h1>
+                        <div class = "project-box-buttons" style="display:flex; ">
+                            <button type="button" class="btn btn-danger">HTML</button>
+                            <button type="button" class="btn btn-danger">CSS</button>
+                            <button type="button" class="btn btn-danger">Js</button>
+                        </div>
+
+                        <div class="project-box-display" style="display: flex; justify-content: space-between;">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </div>
+                    </div>
                 </div>
+
+
+                <!-- MY CONTENT ENDS -->
             </div>
         </div>
     </div>
