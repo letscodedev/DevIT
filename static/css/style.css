@@ -1,72 +1,98 @@
 body {
-	background-color: #000000;
-	color: white;
-	overflow-x: hidden; 
+    background-color: white;
+    color: rgb(126, 126, 126);
+    overflow-x: hidden;
 }
 
 .image-responsive {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .nav {
-	padding: 1rem;
-	font-size: 2.5rem;
-	height: 10vh;
+    padding: 1rem;
+    font-size: 2.5rem;
+    height: 10vh;
 }
 
 .recents {
-	margin-top: 1rem;
-	height: 80vh;
-	border-radius: 10px;
-	border: 1px solid white;
-	padding-top: 1rem;
+    margin-top: 1rem;
+    height: 80vh;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding-top: 1rem;
 }
 
 .dashboard {
-	padding-left: 5rem;
+    padding-left: 5rem;
 }
 
 .left-float {
-	float: left;
+    float: left;
 }
 
 .left-float h4 {
-	display: inline-block;
-	margin-right: 2rem;
+    display: inline-block;
+    margin-right: 2rem;
 }
 
 .right-float {
-	float: right;
+    float: right;
 }
 
 .add-project {
-	border-radius: 50%;
-	margin-right: 10rem;
-	font-size: 2rem;
+    border-radius: 50%;
+    margin-right: 10rem;
+    font-size: 2rem;
 }
 
 .footer {
-	position: absolute;
-	bottom: 0;
-	padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.login-button {
+    background-color: white;
+    color: rgb(126, 126, 126);
+    border: 4px solid #4081C3;
+    border-radius: 100px 100px 100px 100px;
+}
+
+.login-button:hover {
+    background-color: #4081C3;
+    color: white;
 }
 
 
-@media (min-width:320px) { 
-	/* Phone */
+/* 4081C3 */
 
+@media (min-width:320px) {
+    /* Phone */
 }
 
 @media (min-width:961px) {
-	/* Desktop */
-	.row {
-		height: 90vh;
-		display: flex;
-	  	justify-content: center;
-	  	align-items: center;
-	}
-	#image-blockchain {
-		padding: 5rem;
-	}
+    /* Desktop */
+    .row {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #image-blockchain {
+        padding: 5rem;
+    }
 }
