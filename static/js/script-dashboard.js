@@ -7,7 +7,7 @@ $(document).ready(function(){
     var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
     console.log(yes(diffDays, 100, 1))
     function yes(val, max, min) { return ((val - min) / (max - min))*100; }
-    $("#data").append(deadline - date);
+    // $("#data").append(deadline - date);
     $('#progress').animate({
         'width': diffDays
     }, 'slow')
