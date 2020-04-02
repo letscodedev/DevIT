@@ -9,7 +9,6 @@
     <!--- CSS -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="static/css/style.css">
 
 
@@ -17,7 +16,7 @@
         .project-box {
             width: 25%;
             margin: 5px;
-            border: 1px solid white;
+            /*border: 1px solid white;*/
             border-radius: 10px;
             min-width: 239px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -26,6 +25,7 @@
         
         .project-box:hover {
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            cursor: pointer;
         }
         
         .project-box h1 {
@@ -66,10 +66,9 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 12px;
+            font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
-            border-radius: 100px 100px 100px 100px;
         }
         
         .btn-circle {
@@ -95,113 +94,98 @@
     <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js" integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="static/js/script.js"></script>
+
+    <script src="static/js/script-dashboard.js"></script>
 </head>
 
 <body>
-    <div>
+    <div class="nav">
+        Hack-Quarantine
+    </div>
 
-        <div class="nav">
-            Hack-Quarantine
-        </div>
-
-        <div class="container-fluid">
-            <div class="col-md-3 col-sm-12">
-                <div class="recents">
-                    <ul>
-                        <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 1</li>
-                        <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 2</li>
-                        <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 3</li>
-                        <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 4</li>
-                    </ul>
-                </div>
+    <div class="container-fluid">
+        <div class="col-md-3 col-sm-12">
+            <div class="recents">
+                <ul>
+                    <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 1</li>
+                    <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 2</li>
+                    <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 3</li>
+                    <li>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 4</li>
+                </ul>
             </div>
-            <div class="col-md-9 col-sm-12 dashboard">
-                <h1> Dashboard </h1>
-                <div class="project" style="display:flex; justify-content: space-between;">
-                    <div class="left-float">
-                        <a onclick="activeProject()">
-                            <h4> Active Projects </h4>
-                        </a>
-                        <a onclick="pastProject()">
-                            <h4> Past Projects </h4>
-                        </a>
-                    </div>
-                    <div class="right-float">
-                        <button type="button" class="btn btn-primary btn-circle btn-lg" style="font-size: 30px; "><span style="    position: relative;
-                            top: -4px">+</span></button>
-                    </div>
-                    <div style="clear: both"></div>
+        </div>
+        <div class="col-md-9 col-sm-12 dashboard">
+            <h1> Dashboard </h1>
+            <div class="project" style="display:flex; justify-content: space-between; align-items: center;">
+                <div class="left-float">
+                    <a onclick="activeProject()">
+                        <h4> Active Projects </h4>
+                    </a>
+                    <a onclick="pastProject()">
+                        <h4> Past Projects </h4>
+                    </a>
                 </div>
-                <div class="content">
-                    <!-- MY CONTENT -->
-
-                    <div style="display:flex; margin:1rem 0.5rem; flex-wrap: wrap; ">
-                        <div class="project-box">
-                            <div class="project-box-header" style="display:flex; justify-content: space-between;">
-                                <span>project#1</span>
-                                <span>date</span>
-                            </div>
-                            <h1>Web design</h1>
-                            <div class="project-box-buttons" style="display:flex; ">
-                                <div class="button">HTML</div>
-                                <div class="button">CSS</div>
-                                <div class="button">Js</div>
-                            </div>
-
-                            <div class="project-box-display" style="display: flex; justify-content: space-between;">
-                                <div>1</div>
-                                <div>2</div>
-                                <div>3</div>
-                            </div>
+                <div class="right-float">
+                    <button type="button" class="btn btn-primary btn-circle btn-lg" style="font-size: 25px;"><span>+</span>
+                    </button>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="content">
+                <!-- MY CONTENT -->
+                <div style="display:flex; margin:1rem 0.5rem; flex-wrap: wrap;" id="data"></div>
+                <div style="display:flex; margin:1rem 0.5rem; flex-wrap: wrap; ">
+                    <div class="project-box">
+                        <div class="project-box-header" style="display:flex; justify-content: space-between;">
+                            <span>Project#1</span>
+                            <span><i class="far fa-clock"></i>date</span>
+                        </div>
+                        <h1>Web design</h1>
+                        <div class="project-box-buttons" style="display:flex; ">
+                            <div class="button">FrontEnd</div>
                         </div>
 
-                        <div class="project-box">
-                            <div class="project-box-header" style="display:flex; justify-content: space-between;">
-                                <span>project#1</span>
-                                <span>date</span>
-                            </div>
-                            <h1>Web design</h1>
-                            <div class="project-box-buttons" style="display:flex; ">
-                                <div class="button">HTML</div>
-                                <div class="button">CSS</div>
-                                <div class="button">Js</div>
-                            </div>
-
-                            <div class="project-box-display" style="display: flex; justify-content: space-between;">
-                                <div>1</div>
-                                <div>2</div>
-                                <div>3</div>
+                        <div class="project-box-display" style="display: flex; justify-content: space-between;">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </div>
+                        <div style="position: relative; bottom: 0;">
+                            <div id="progress" style="background-color: red; height: 10px; border-radius: 0 10px 10px 10px;width: 0%">
                             </div>
                         </div>
                     </div>
 
+                    <div class="project-box">
+                        <div class="project-box-header" style="display:flex; justify-content: space-between;">
+                            <span>project#1</span>
+                            <span>date</span>
+                        </div>
+                        <h1>Web design</h1>
+                        <div class="project-box-buttons" style="display:flex; ">
+                            <div class="button">HTML</div>
+                            <div class="button">CSS</div>
+                            <div class="button">Js</div>
+                        </div>
 
-                    <!-- MY CONTENT ENDS -->
+                        <div class="project-box-display" style="display: flex; justify-content: space-between;">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </div>
+                        <div style="position: relative; bottom: 0;">
+                            <div id="progress" style="background-color: green; height: 10px; border-radius: 0 10px 10px 10px;width: 40%">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- MY CONTENT ENDS -->
             </div>
         </div>
-        <div class="footer">
-            Hack-Quarantine
-        </div>
+    </div>
+    <!-- <div class="footer">
+        Hack-Quarantine
+    </div> -->
 
-        <script type="text/javascript">
-            $(document).ready(function() {
-                activeProject();
-            });
-
-            function activeProject() {
-                $("#data").empty();
-                console.log("Active Project");
-                $("#data").append("active");
-            }
-
-            function pastProject() {
-                $("#data").empty();
-                console.log("Past Project");
-                $("#data").append("past");
-            }
-        </script>
 </body>
-
 </html>
