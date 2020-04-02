@@ -1,5 +1,4 @@
 body {
-    background-color: white;
     color: rgb(126, 126, 126);
     overflow-x: hidden;
 }
@@ -69,7 +68,6 @@ body {
     background-color: white;
     color: rgb(126, 126, 126);
     border: 4px solid #4081C3;
-    border-radius: 100px 100px 100px 100px;
 }
 
 .login-button:hover {
@@ -77,6 +75,16 @@ body {
     color: white;
 }
 
+.signup-button {
+    background-color: white;
+    color: rgb(126, 126, 126);
+    border: 4px solid #BC4B51;
+}
+
+.signup-button:hover {
+    background-color: #BC4B51;
+    color: white;
+}
 
 /* 4081C3 */
 
@@ -87,7 +95,7 @@ body {
 @media (min-width:961px) {
     /* Desktop */
     .row {
-        height: 90vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
