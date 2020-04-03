@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Project-Dashboard</title>
+		<!--- CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+		<style type="text/css">
+			.nav {
+			padding: 1rem;
+			font-size: 2.5rem;
+			height: 10vh;
+			}
+			body{
+				height:100vh;
+				color: rgb(126, 126, 126);
+			}
+			.nav {
+    			padding: 1rem;
+    			font-size: 2.5rem;
+    			height: 10vh;
+			}
+			.dash-container{
+				display: flex;
+				margin: 0rem 2rem;
+				border:1px solid black;
+				border: 1px solid white;
+				padding-top: 1rem;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+			}
+			.left-dash-container{
+				width:65%;
+				margin:1rem;
+			}
+			.right-dash-container{
+				width:35%;
+				height: 45vh;
+				margin:1rem;
+			}
+			.container-header{
+				display:flex;
+				justify-content: space-between;
+			}
+			.container-header h3{
+				margin:1rem;
+			}
+			.container-header .invite-btn{
+				margin:1rem;
+			}
+			.file-manager{
+				margin:1rem;
+				width: 97%;
+				height:67vh;
+				border-radius: 10px;
+				border: 1px solid white;
+				padding-top: 1rem;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+			}
+			.invited-people{
+				width:94%;
+				height: 100%;
+				margin:1rem;
+				border-radius: 10px;
+				border: 1px solid white;
+				padding-top: 1rem;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+			}
+		</style>
+		
+		<!-- JS -->
+		<script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js" integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="nav">
+			Hack-Quarantine
+		</div>
+		<div class="dash-container ">
+			<div class="left-dash-container " >
+				<div class="container-header">
+					<div>
+						<h3>Project Name</h3>
+					</div>
+					<div>
+						<button type="button" class=" invite-btn btn btn-primary"> + invite</button>
+					</div>
+				</div>
+				<div class="file-manager">
+					
+				</div>
+			</div>
+			<div class="right-dash-container " >
+				<div class="invited-people">
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
