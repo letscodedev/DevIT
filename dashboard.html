@@ -93,6 +93,15 @@
             line-height: 1.33;
             border-radius: 25px;
         }
+        .modal {
+            margin-top: 10rem;
+        }
+        .modal-title {
+            margin-bottom: -1rem;
+        }
+        .close {
+            margin-top:-2.5rem !important;
+        }
     </style>
     <!-- JS -->
     <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js" integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX" crossorigin="anonymous"></script>
@@ -130,8 +139,32 @@
                     </a>
                 </div>
                 <div class="right-float">
-                    <button type="button" class="btn btn-primary btn-circle btn-lg" style="font-size: 25px;"><span>+</span>
+                    <button type="button" class="btn btn-primary btn-circle btn-lg" style="font-size: 25px;" data-toggle="modal" data-target="#exampleModal"><span>+</span>
                     </button>
+                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLabel">Create Project</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Project Name">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Create</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div style="clear: both"></div>
             </div>
