@@ -7,6 +7,7 @@
 		<!--- CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 		<style type="text/css">
 			
 			body{
@@ -50,20 +51,28 @@
 			.file-manager {
 				margin:1rem;
 				width: 99%;
-				min-height:61vh;
+				height:61vh;
 				border-radius: 10px;
 				border: 1px solid white;
-				padding-top: 1rem;
+				padding: 1rem;
 				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+				overflow: auto;
+			}
+
+			.file-manager h1{
+				animation-duration: 3s;
+				animation-delay: 2s;
 			}
 			.invited-people {
 				width:94%;
 				height: 75%;
 				margin:1rem;
+				padding:1rem;
 				border-radius: 10px;
 				border: 1px solid white;
 				padding-top: 1rem;
 				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+				overflow: auto;
 			}
 			.logo img{
 				width: auto;
@@ -103,6 +112,29 @@
 			    background-color: #4081C3;
 			    color: white;
 			}
+			/* width */
+			::-webkit-scrollbar {
+			  width: 11px;
+
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+			  background: #f1f1f1; 
+			  border-radius: 10px;
+			  margin:3px 1px;
+			}
+			 
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+			  background: #888; 
+			  border-radius: 10px;	
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+			  background: #555; 
+			}
 		</style>
 		
 		<!-- JS -->
@@ -124,13 +156,48 @@
 						<button class="btn btn-success" style="display: inline!important" id="login">+ Invite</button>
 					</div>
 				</div>
-				<div class="file-manager">
-					
+				<div class="file-manager ">
+					<h1 class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
 				</div>
 			</div>
 			<div class="right-dash-container " >
 				<div class="invited-people">
-					
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint is aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</div>
 				
 			</div>
