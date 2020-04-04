@@ -135,6 +135,20 @@
 			::-webkit-scrollbar-thumb:hover {
 			  background: #555; 
 			}
+
+			/* popup */
+			.modal {
+            margin-top: 3rem;
+			}
+			.modal-title {
+				margin-bottom: -1rem;
+			}
+			.close {
+				margin-top:-3.5rem !important;
+			}
+			.container-header h3 {
+				margin: 0rem !important;
+			}
 		</style>
 		
 		<!-- JS -->
@@ -153,7 +167,35 @@
 						<h3>Project Name</h3>
 					</div>
 					<div>
-						<button class="btn btn-success" style="display: inline!important" id="login">+ Invite</button>
+						<button class="btn btn-success" style="display: inline!important" id="login" data-toggle="modal" data-target="#exampleModal">+ Invite</button>
+						
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h3 class="modal-title" id="exampleModalLabel">New message</h3>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div class="form-group">
+												<label for="email" class="col-form-label">Email</label>
+												<input type="email" class="form-control" id="email">
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary">Invite</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
 					</div>
 				</div>
 				<div class="file-manager ">
