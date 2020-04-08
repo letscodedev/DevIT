@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard</title>
-        <!--- CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-        <link rel="stylesheet" href="static/css/style.css">
-        <style type="text/css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!--- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style type="text/css">
         *:focus {
             outline: 0 !important;
         }
+
         .project-box {
             width: 25%;
             margin: 5px;
@@ -23,6 +25,7 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
         }
+
         .nav {
             padding: 2rem;
             font-size: 2.5rem;
@@ -31,40 +34,42 @@
             color: floralwhite;
             margin-bottom: 1rem;
         }
-        .project-container{
+
+        .project-container {
             margin: 1rem 2rem;
-            border:1px solid black;
+            border: 1px solid black;
             border: 1px solid white;
             padding-top: 1rem;
             min-height: 67vh;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         }
+
         .project-box:hover {
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             cursor: pointer;
         }
-        
+
         .project-box h1 {
             margin: 1rem;
         }
-        
+
         .project-box-header {
             margin: 2rem 1rem;
         }
-        
+
         .project-box-buttons {
             margin: 1rem;
         }
-        
+
         .project-box-buttons button {
             margin: 0.5rem;
             width: 100%
         }
-        
+
         .project-box-display {
             margin: 1rem;
         }
-        
+
         .project-box-display div {
             width: 33%;
             padding: 1rem;
@@ -73,7 +78,7 @@
             border: 1px solid white;
             border-radius: 5px;
         }
-        
+
         .button {
             background-color: #555555;
             border: none;
@@ -87,7 +92,7 @@
             border-radius: 100px;
             cursor: pointer;
         }
-        
+
         .btn-circle {
             width: 30px;
             height: 30px;
@@ -97,7 +102,7 @@
             line-height: 1.428571429;
             border-radius: 15px;
         }
-        
+
         .btn-circle.btn-lg {
             width: 50px;
             height: 50px;
@@ -106,22 +111,27 @@
             line-height: 1.33;
             border-radius: 25px;
         }
+
         .modal {
             margin-top: 10rem;
         }
+
         .modal-title {
             margin-bottom: -1rem;
         }
+
         .close {
-            margin-top:-2.5rem !important;
+            margin-top: -2.5rem !important;
         }
-        .logo img{
+
+        .logo img {
             width: auto;
             height: 300px;
             position: absolute;
             bottom: 0;
             right: 0;
         }
+
         footer {
             position: absolute;
             bottom: 0;
@@ -129,114 +139,91 @@
             height: 36px;
             width: 100%
         }
-        </style>
-        <!-- JS -->
-        <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js" integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="static/js/script-dashboard.js"></script>
-    </head>
-    <body>
-        <div class="nav">
-            Hack-Quarantine
-        </div>
-        <div class="container-fluid project-container">
-            
-            <div class="col-md-9 col-sm-12 dashboard">
-                <h1> Dashboard </h1>
-                <div class="project" style="display:flex; justify-content: space-between; align-items: center;">
-                    <div class="left-float">
-                        <a onclick="activeProject()">
-                            <h4> Active Projects </h4>
-                        </a>
-                        <a onclick="pastProject()">
-                            <h4> Past Projects </h4>
-                        </a>
-                    </div>
-                    <div class="right-float">
-                        <button type="button" class="btn btn-primary btn-circle btn-lg" style="font-size: 25px;" data-toggle="modal" data-target="#exampleModal"><span>+</span>
-                        </button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h3 class="modal-title" id="exampleModalLabel">Create Project</h3>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    </style>
+    <!-- JS -->
+    <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js"
+        integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="static/js/script-dashboard.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        Hack-Quarantine
+    </div>
+    <div class="container-fluid project-container">
+
+        <div class="col-md-9 col-sm-12 dashboard">
+            <h1> Dashboard </h1>
+            <div class="project" style="display:flex; justify-content: space-between; align-items: center;">
+                <div class="left-float">
+
+                </div>
+                <div class="right-float">
+                    <button type="button" class="btn btn-primary btn-circle btn-lg" style="font-size: 25px;"
+                        data-toggle="modal" data-target="#exampleModal"><span>+</span>
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLabel">Create Project</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Project Name">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Create</button>
-                                    </div>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Project Name">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Create</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div style="clear: both"></div>
                 </div>
-                <div class="content">
-                    <!-- MY CONTENT -->
-                    <div style="display:flex; margin:1rem 0.5rem; flex-wrap: wrap;" id="data"></div>
-                    <div style="display:flex; margin:1rem 0.5rem; flex-wrap: wrap; ">
-                        <div class="project-box">
-                            <div class="project-box-header" style="display:flex; justify-content: space-between;">
-                                <span>Project#1</span>
-                                <span><i class="far fa-clock" style="margin-right: 0.5rem;"></i>date</span>
-                            </div>
-                            <h1>Web design</h1>
-                            <div class="project-box-buttons" style="display:flex; ">
-                                <div class="button">
-                                <i class="fas fa-tag" style="margin-right: 0.5rem;"></i>FrontEnd</div>
-                            </div>
-                            <div class="project-box-display" style="display: flex; justify-content: space-between;">
-                                <div>1</div>
-                                <div>2</div>
-                                <div>3</div>
-                            </div>
-                            <div style="position: relative; bottom: 0;">
-                                <div id="progress" style="background-color: red; height: 10px; border-radius: 0 10px 10px 10px;width: 0%">
-                                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="content">
+                <!-- MY CONTENT -->
+                <div style="display:flex; margin:1rem 0.5rem; flex-wrap: wrap;" id="data">
+
+                    <!--
+                    <div class="project-box">
+                        <div class="project-box-header" style="display:flex; justify-content: space-between;">
+                            <span>project#1</span>
+                            <span><i class="far fa-clock" style="margin-right: 0.5rem;"></i>date</span>
+                        </div>
+                        <h1>Web design</h1>
+
+                        <div style="position: relative; bottom: 0;">
+                            <div id="progress"
+                                style="background-color: green; height: 10px; border-radius: 0 10px 10px 10px;width: 40%">
                             </div>
                         </div>
-                        <div class="project-box">
-                            <div class="project-box-header" style="display:flex; justify-content: space-between;">
-                                <span>project#1</span>
-                                <span><i class="far fa-clock" style="margin-right: 0.5rem;"></i>date</span>
-                            </div>
-                            <h1>Web design</h1>
-                            <div class="project-box-buttons" style="display:flex; ">
-                                <div class="button"><i class="fas fa-tags" style="margin-right: 0.5rem"></i>BackEnd</div>
-                            </div>
-                            <div class="project-box-display" style="display: flex; justify-content: space-between;">
-                                <div>1</div>
-                                <div>2</div>
-                                <div>3</div>
-                            </div>
-                            <div style="position: relative; bottom: 0;">
-                                <div id="progress" style="background-color: green; height: 10px; border-radius: 0 10px 10px 10px;width: 40%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- MY CONTENT ENDS -->
+                    </div>-->
+
                 </div>
+
+                <!-- MY CONTENT ENDS -->
             </div>
         </div>
-        <!-- <div class="footer">
+    </div>
+    <!-- <div class="footer">
             Hack-Quarantine
         </div> -->
-        <footer>
-            <div class="logo">
-                <img src="assets/coder.gif" alt="logo">
-            </div>
-        </footer>
-    </body>
+    <footer>
+        <div class="logo">
+            <img src="assets/coder.gif" alt="logo">
+        </div>
+    </footer>
+</body>
+
 </html>
