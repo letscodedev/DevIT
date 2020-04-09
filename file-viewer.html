@@ -188,7 +188,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="common.js"></script>
-    <script src="static/js/script-project.js"></script>
+    <script language="javascript" type="text/javascript" src="edit_area/edit_area_full.js"></script>
+    <script src="static/js/script-fileviewer.js"></script>
 </head>
 
 <body>
@@ -199,61 +200,11 @@
         <div class="left-dash-container ">
             <div class="container-header">
                 <div>
-                    <h3 id="project_name">Project Name</h3>
-                </div>
-                <div>
-                    <button class="btn btn-warning" style="display: inline!important" id="mergebtn">Show Merge
-                        Request</button>
-                    <button class="btn btn-success" style="display: inline!important" id="invitebtn" data-toggle="modal"
-                        data-target="#exampleModal">+ Invite</button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h3 class="modal-title" id="exampleModalLabel">Invite People</h3>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" id="email"
-                                                placeholder="Email Address">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary"
-                                        onclick="sendInvitation()">Invite</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 id="file_name">File Name</h3>
                 </div>
             </div>
-            <div class="file-manager">
-                <h4 class="fadeInUp">
-                    <ul class="list-group" id="data">
-                        <!--<a href='#'>
-                            <li class="list-group-item"><i class="fa fa-file" style="margin-right: 1.5rem"></i>File</li>
-                        </a>-->
-                        <!--<a href='#'>
-                            <li class="list-group-item"><i class="fa fa-folder" style="margin-right: 1rem"></i>Folder
-                            </li>
-                        </a>-->
-                    </ul>
-                </h4>
-            </div>
-        </div>
-        <div class="right-dash-container ">
-            <div class="invited-people">
-                <h4 class="fadeInUp">
-                    <ul class="list-group" id="invitePeople">
-                        <!--<li class="list-group-item"><i class="fa fa-user" style="margin-right: 1rem"></i>Devarsh</li>-->
-                    </ul>
-                </h4>
+            <div class="file-manager" name="content" id="main_view">
+
             </div>
         </div>
     </div>
