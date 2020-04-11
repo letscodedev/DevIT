@@ -10,6 +10,8 @@ Website: [https://devit-7cd11.web.app/](https://devit-7cd11.web.app/)
 
 Project Demo Video: [https://www.youtube.com/watch?v=DKrLGkodI2k](https://www.youtube.com/watch?v=DKrLGkodI2k)
 
+DevPost Project: [https://devpost.com/software/devit](https://devpost.com/software/devit)
+
 ## Team Quaran-Hack
 
 - Devarsh Panchal
