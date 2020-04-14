@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Requests</title>
+    <!--- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style type="text/css">
+        *:focus {
+            outline: 0 !important;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        /*a:hover 
+            {
+                 text-decoration:none; 
+            }*/
+        body {
+            height: 100vh;
+            color: rgb(126, 126, 126);
+        }
+
+        .nav {
+            padding: 2rem;
+            font-size: 2.5rem;
+            height: 10vh;
+            background-color: #003140;
+            color: floralwhite;
+        }
+
+        .dash-container {
+            display: flex;
+            margin: 1rem 2rem;
+            border: 1px solid black;
+            border: 1px solid white;
+            padding-top: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        .left-dash-container {
+            width: 65%;
+            margin: 1rem;
+        }
+
+        .right-dash-container {
+            width: 35%;
+            height: 45vh;
+            margin: 1rem;
+        }
+
+        .container-header {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .container-header h3 {
+            margin: 1rem;
+        }
+
+        .container-header .invite-btn {
+            margin: 1rem;
+        }
+
+        .file-manager {
+            margin: 1rem;
+            width: 99%;
+            height: 61vh;
+            border-radius: 10px;
+            border: 1px solid white;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            overflow: auto;
+        }
+
+
+
+        .logo img {
+            width: auto;
+            height: 300px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            background-color: #003140;
+            height: 36px;
+            width: 100%
+        }
+
+        button {
+            float: right;
+
+        }
+
+        .container-header h3 {
+            margin: 0rem !important;
+        }
+
+        /* modal */
+        .modal-footer button {
+            margin: 5px;
+        }
+
+        .modal-header {
+            height: 60px;
+        }
+
+        .close {
+            margin-top: -40px !important;
+        }
+
+        .modal-body {
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 10px;
+        }
+
+        .modal-body .form-check {
+            padding: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        #progress_bar {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: transparent;
+            z-index: 1000;
+
+        }
+    </style>
+
+    <!-- JS -->
+    <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js"
+        integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="common.js"></script>
+    <script src="static/js/script-merger_requests.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        DevIT
+    </div>
+    <div id="progress_bar" hidden>
+        <img style="position: absolute; height: 15%; width: 10%; top: 40%; left: 45%;" src="spin.gif" />
+    </div>
+    <div class="dash-container">
+        <div class="left-dash-container ">
+            <div class="container-header">
+                <div>
+                    <h3 id="project_name">Project Name</h3>
+                </div>
+
+            </div>
+            <div class="file-manager">
+                <h4 class="fadeInUp">
+                    <ul class="list-group" id="data" style=" line-height:1.5!important;">
+
+                        <!--<li class="list-group-item">xyz <button type="button" class="btn btn-warning"
+                                data-toggle="modal" data-target="#exampleModal">See Request</button></li>-->
+
+
+                    </ul>
+                </h4>
+            </div>
+        </div>
+        <!-- modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLabel">Changed Files List</h3>
+                        <button type="button" class="close" id="myclosa" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalbd">
+
+                        <!--<div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Default checkbox
+                                </label>
+                            </div>-->
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="confirmbtn">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="assets/coder.gif" alt="logo">
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -14,9 +14,11 @@ $(document).ready(function () {
     var userSession = new blockstack.UserSession({ appConfig })
     let project_name = $.urlParam('project_name')
     let file = $.urlParam('file')
+    let userid = $.urlParam('userid')
     $("#file_name").text(file)
     let isEmployee = $.urlParam('isEmployee')
     showFile(project_name)
+
     function showFile(project_name) {
         (async () => {
             let sharedKey;
@@ -30,7 +32,12 @@ $(document).ready(function () {
                 projects = JSON.parse(projects)
                 sharedKey = projects.my_projects[project_name].sharedkey
             }
-            let fileContent = await userSession.getFile(project_name + "/" + file, { decrypt: false })
+            let fileContent;
+            if (userid) {
+                fileContent = await userSession.getFile(project_name + "@" + userSession.loadUserData().username + "/" + file, { decrypt: false, username: userid, app: "https://devit-7cd11.web.app" })
+            } else {
+                fileContent = await userSession.getFile(project_name + "/" + file, { decrypt: false })
+            }
             fileContent = await decrypt(fileContent, sharedKey)
 
 

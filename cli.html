@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cli Options</title>
+    <!--- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style type="text/css">
+        *:focus {
+            outline: 0 !important;
+        }
+
+        .project-box {
+            width: 25%;
+            margin: 5px;
+            /*border: 1px solid white;*/
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            min-width: 239px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .nav {
+            padding: 2rem;
+            font-size: 2.5rem;
+            height: 10vh;
+            background-color: #003140;
+            color: floralwhite;
+            margin-bottom: 1rem;
+        }
+
+        .project-container {
+            margin: 1rem 2rem;
+            border: 1px solid black;
+            border: 1px solid white;
+            padding-top: 1rem;
+            min-height: 67vh;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0px 0px rgba(0, 0, 0, 0.24);
+        }
+
+
+
+        .project-box h1 {
+            margin: 1rem;
+        }
+
+        .project-box-header {
+            margin: 2rem 1rem;
+        }
+
+        .project-box-buttons {
+            margin: 1rem;
+        }
+
+        .project-box-buttons button {
+            margin: 0.5rem;
+            width: 100%
+        }
+
+        .project-box-display {
+            margin: 1rem;
+        }
+
+        .project-box-display div {
+            width: 33%;
+            padding: 1rem;
+            margin: 0.5rem;
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .button {
+            background-color: #555555;
+            border: none;
+            color: white;
+            padding: 7px 10px 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            border-radius: 100px;
+            cursor: pointer;
+            width: 500px !important;
+        }
+
+        .marg {
+            margin: 10px;
+            display: flex;
+        }
+
+        .logo img {
+            width: auto;
+            height: 300px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            background-color: #003140;
+            height: 36px;
+            width: 100%
+        }
+
+        .box {
+            height: 30px;
+            width: 400px;
+            white-space: nowrap;
+            border: ridge 1px rgb(201, 192, 192);
+            margin: 10px;
+            display: none;
+            padding: 10px;
+        }
+    </style>
+    <!-- JS -->
+    <script src="https://unpkg.com/blockstack@19.3.0/dist/blockstack.js"
+        integrity="sha384-kscoAgc5pZqovHWSKndfyn3OeKHfRSh+Xc5wYc+E02BuyQV2zwEEHJ7p5drKnRrX"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="common.js"></script>
+    <script src="static/js/script-cli.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        DevIT
+    </div>
+    <div class="container-fluid project-container">
+
+        <div class="col-sm-12 dashboard ">
+            <h1 class="text-center"> Cli Options</h1>
+
+            <div>
+                <!-- MY CONTENT -->
+                <div style="margin:2rem 50rem;" id="data">
+
+                    <div class=" marg col-10">
+                        <button type="button" id="click1" class="btn btn-primary btn-lg">Generate CLI Key</button>
+                        <input type="text" class="box" id="box1" style="display: none;" />
+
+
+                    </div>
+                    <div class="marg col-10">
+                        <button type="button" id="click2" class="btn btn-primary btn-lg">Download CLI Config
+                            Key</button>
+
+                    </div>
+                    <div class=" marg col-10">
+                        <button type="button" id="click3" class="btn btn-primary btn-lg">Download CLI</button>
+
+                    </div>
+
+                </div>
+                <div class="text-center col-sm-10">
+                    <div>
+                        -since it is Opens Source Project, You can reach out to our project repo and build it for
+                        your enviorment.<br>
+                        -Cli code is written in NodeJs.<br>
+                        -Go cli source directory type 'npm install' and then set path variable link to cli source
+                        directory
+                        - Now you are ready to Achive true Ownership on your remote work<br>
+                    </div>
+                </div>
+
+
+                <!-- MY CONTENT ENDS -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo">
+            <img src="assets/coder.gif" alt="logo">
+        </div>
+    </footer>
+</body>
+
+</html>

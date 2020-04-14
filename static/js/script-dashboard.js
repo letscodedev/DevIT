@@ -15,9 +15,10 @@ $(document).ready(function () {
             $("#fltcreateproject").hide()
         }
     }
-    var domainURL = "http://localhost:8080"
+    var domainURL = "https://devit-7cd11.web.app"
     const appConfig = new blockstack.AppConfig(['store_write', 'publish_data'])
     var userSession = new blockstack.UserSession({ appConfig })
+    init_public_file()
     if (!isEmploye) {
         activeProjectM();
     } else {
@@ -56,6 +57,7 @@ $(document).ready(function () {
 
         })()
     }
+
     function activeProjectE() {
         (async () => {
 
@@ -90,6 +92,97 @@ $(document).ready(function () {
 
         })()
     }
+
+    async function get_random_key() {
+
+        let key = await window.crypto.subtle.generateKey(
+            {
+                name: "AES-GCM",
+                length: 256
+            },
+            true,
+            ["encrypt", "decrypt"]
+        );
+        return await crypto.subtle.exportKey("jwk", key)
+    }
+
+    function create_project(project_name) {
+
+
+
+        (async () => {
+
+            let fileContents = await userSession.getFile("created_project.json", { decrypt: true });
+            let data;
+            let payload = { "created_at": Date.now(), "sharedkey": (await get_random_key()).k }
+
+            if (fileContents) {
+
+                try {
+
+                    data = JSON.parse(fileContents);
+                    if (data.my_projects.hasOwnProperty(project_name)) {
+                        console.log("Project Alredy Exist")
+                        return
+                    }
+
+                    data.my_projects[project_name] = payload;
+                } catch (e) {
+                    console.log("Error: function(create_project): " + e);
+                }
+
+            } else {
+
+                data = { my_projects: {} }
+                data.my_projects[project_name] = payload
+
+            }
+
+            let project_data = { "commit": Date.now() }
+            let fs_data = {}
+            let enc_project_data = await encrypt(JSON.stringify(project_data), payload.sharedkey)
+            let enc_fd_data = await encrypt(JSON.stringify(fs_data), payload.sharedkey)
+
+
+            await userSession.putFile("created_project.json", JSON.stringify(data), { encrypt: true })
+
+            await userSession.putFile(project_name + ".json", enc_project_data, { encrypt: false })
+            await userSession.putFile(project_name + "/fs.json", enc_fd_data, { encrypt: false })
+            activeProjectM()
+
+        })();
+
+
+    }
+
+    $("#projcbtn").click(function () {
+        let projectn = $("#projectc_name").val()
+        if (projectn) {
+            create_project(projectn)
+            $("#myclosa").trigger("click")
+        }
+
+    })
+
+    function init_public_file() {
+        (async () => {
+
+            let options = {
+                decrypt: false
+            }
+
+            let fileContents = await userSession.getFile("public_info.json", options);
+            if (!fileContents) {
+
+                let payload = { "publick_key": blockstack.getPublicKeyFromPrivate(userSession.loadUserData().appPrivateKey) }
+                await userSession.putFile("public_info.json", JSON.stringify(payload), { encrypt: false })
+
+            }
+
+
+        })();
+    }
+
 });
 
 

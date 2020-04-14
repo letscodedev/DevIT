@@ -25,7 +25,11 @@ $(document).ready(function () {
 
     }
 
-    $('.show').on('click', function () {
+    $("#download").click(function () {
+        window.location = "cli.html"
+    })
+
+    $('#login').click(function () {
         $('#content').animate({
             left: 2000
         }, 2000)

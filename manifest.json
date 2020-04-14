@@ -1,7 +1,7 @@
 {
-    "name": "HackQurantine",
-    "start_url": "localhost:8080",
-    "description": "A simple demo of Blockstack Auth",
+    "name": "DevIT",
+    "start_url": "devit-7cd11.web.app",
+    "description": "DevIT gives you truly ownership of your work space",
     "icons": [
         {
             "src": "https://workfromhome-a27de.firebaseapp.com/icon/icon.png",

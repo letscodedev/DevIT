@@ -13,7 +13,7 @@ $(document).ready(function () {
         ChildFolder = $.urlParam('child_folder')
     }
 
-    var domainURL = "http://localhost:8080"
+    var domainURL = "https://devit-7cd11.web.app"
     const appConfig = new blockstack.AppConfig(['store_write', 'publish_data'])
     var userSession = new blockstack.UserSession({ appConfig })
     let isEmployee = false
@@ -145,11 +145,70 @@ $(document).ready(function () {
     }
 
 
-});
 
-function sendInvitation() {
-    console.log("Invitation Sent");
-}
+    $("#invitebtn_click").click(function () {
+        let email = $("#email").val()
+        let bs_userID = $("#bsuid").val()
+
+        if (email && bs_userID) {
+            invite(project_name, bs_userID, email)
+        }
+
+    });
+    $("#mergebtn").click(function () {
+        window.location = "merger_requests.html?project_name=" + project_name
+    })
+
+    function invite(project_name, userid, email) {
+
+        (async () => {
+            try {
+                let fileContents = await userSession.getFile("public_info.json", { decrypt: false, username: userid, app: "https://devit-7cd11.web.app" });
+                if (fileContents) {
+                    let public_key = JSON.parse(fileContents).publick_key
+                    let projects = await userSession.getFile("created_project.json", { decrypt: true })
+                    let project_data = JSON.parse(projects)
+                    let shared_key = project_data.my_projects[project_name].sharedkey;
+                    if (shared_key === undefined) {
+                        console.log("project not found")
+                        return
+                    }
+
+                    let invited = project_data.my_projects[project_name].invited
+                    if (invited === undefined) {
+                        invited = {}
+                        invited[userid] = public_key
+                    } else {
+                        invited[userid] = public_key
+                    }
+
+                    project_data.my_projects[project_name].invited = invited
+
+                    let inviteToken = await userSession.encryptContent(shared_key, { publicKey: public_key })
+                    inviteToken = JSON.parse(inviteToken)
+                    inviteToken["project_name"] = project_name
+                    inviteToken["manager_id"] = userSession.loadUserData().username
+                    inviteToken["manager_pubkey"] = blockstack.getPublicKeyFromPrivate(userSession.loadUserData().appPrivateKey)
+
+                    await userSession.putFile("created_project.json", JSON.stringify(project_data), { encrypt: true })
+
+                    let invi = "https://devit-7cd11.web.app/accept_invitation.html?token=" + window.btoa(JSON.stringify(inviteToken))
+                    $("#closmy_bro").trigger("click");
+                    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=" + email + "&su=Invitatation For " + project_name + "&body=" + encodeURIComponent(invi));
+
+                } else {
+                    console.log("Invited User Not Joined Application")
+                }
+            } catch (e) {
+                console.log("Error: function(invite): " + e)
+                console.log("Invited User Not Joined Application")
+            }
+
+        })();
+
+    }
+
+});
 
 
 
